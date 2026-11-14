@@ -1,0 +1,2 @@
+ADMIN|26a05f24|Damayan Admin|admin@damayan.local|a6bd781ed355ef997b5fc941fb3660c337fef334ca4669139772564c48b77b16|false|
+DONOR|0db2c479|Khate|khate143@gmail.com|e91e511171b8962230077fe7f4cf57d980fa0cdcc40595967583f17932d28feb|false|Individual
