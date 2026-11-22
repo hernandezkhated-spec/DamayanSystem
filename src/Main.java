@@ -10,6 +10,7 @@ public class Main {
     private static final Database db = new Database(Path.of("data"));
 
     public static void main(String[] args) {
+     WebServer.start(db, 8080);
         System.out.println("=== DAMAYAN: Community Aid and Donation Management System ===");
         while (true) {
             System.out.println("\n1. Sign up as an Organization\n2. Sign up as a Donor\n3. Log in\n0. Exit");

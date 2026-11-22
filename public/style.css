@@ -17,7 +17,7 @@ h1{font-size:2rem;line-height:1.15}h2{font-size:1.25rem}h3{font-size:1.05rem}
 .foot{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:32px 12px;margin-top:24px;border-top:1px solid #cfe3d5;font-size:.9rem}
 .foot[hidden]{display:none}
 .foot div{display:flex;flex-direction:column;gap:10px}
-.foot b{margin-bottom:4px;color:var(--dark)}
+.foot b,.foot h4{margin-bottom:4px;color:var(--dark);font-size:1rem}
 .foot a,.foot span{color:var(--mute)}
 .foot a:hover{color:var(--dark)}
 @media(max-width:860px){.foot{grid-template-columns:1fr 1fr}}
@@ -45,7 +45,7 @@ h1{font-size:2rem;line-height:1.15}h2{font-size:1.25rem}h3{font-size:1.05rem}
 .cat.y{background:var(--yel-l)}.cat.p{background:var(--pink)}
 .imgbox{background:#fff;border:1px solid #d3e6d9;border-radius:20px;height:340px;display:grid;place-items:center;margin-top:14px;overflow:hidden}
 .imgbox img{width:100%;height:100%;object-fit:cover;object-position:center 85%}
-
+#proof-preview{height:240px}
 /* buttons, pills, badges */
 .btn{display:inline-block;border:1.5px solid var(--green);border-radius:999px;padding:10px 20px;font:inherit;font-weight:700;background:#fff;color:var(--ink);cursor:pointer;text-align:center}
 .btn.solid{background:var(--green);color:#04301f}
@@ -70,11 +70,26 @@ textarea{border-radius:20px;min-height:110px;resize:vertical}
 .alt{text-align:center;margin-top:16px;color:var(--mute);font-size:.88rem;line-height:1.9}.alt a{font-weight:700}
 .list{padding-left:20px}.list li{margin:6px 0}
 
-/* tables built from grid rows */
-.tbl{display:grid;gap:0}
-.tr{display:grid;grid-template-columns:var(--cols);gap:12px;align-items:center;padding:14px 4px;border-top:1px solid #eee}
-.tr.h{color:var(--mute);border-top:0;font-size:.9rem}
-.tr .b{justify-self:start}
+/* tables (real <table class="tbl">) */
+.tbl{display:table;width:100%;border-collapse:collapse}
+.tbl thead{display:table-header-group}
+.tbl tbody{display:table-row-group}
+.tbl tr{display:table-row}
+.tbl th,.tbl td{display:table-cell;text-align:left;vertical-align:middle;padding:16px 10px}
+.tbl th{font-weight:500;color:var(--mute);font-size:.9rem;white-space:nowrap;border-bottom:1.5px solid var(--dark)}
+.tbl td{border-bottom:1px solid #eee}
+.tbl tbody tr:last-child td{border-bottom:0}
+/* status pills and actions line up in their columns */
+.tbl .b{min-width:104px;text-align:center;padding:6px 14px}
+.tbl .btn{min-width:104px;padding:7px 16px}
+/* plain text links in a table cell (Details, Confirm Receipt) become outline buttons */
+.tbl td a:not(.btn){display:inline-block;min-width:104px;text-align:center;border:1.5px solid var(--green);border-radius:999px;padding:7px 16px;font-weight:700}
+
+/* Toolbar: chips on the left, dropdown + Filter on the right (Verifications) */
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:8px 0 16px}
+.toolbar .pills{margin:0}
+.toolbar .filters{display:flex;gap:12px;align-items:center}
+.toolbar select{width:240px;margin:0}
 
 /* steps, timelines, bars */
 .step{display:grid;grid-template-columns:36px 1fr;gap:12px;margin-top:18px}
@@ -94,11 +109,111 @@ textarea{border-radius:20px;min-height:110px;resize:vertical}
 
 @media(max-width:860px){
  .g2,.g3,.g4,.hero-row,.cats{grid-template-columns:1fr}
- .tr{grid-template-columns:1fr 1fr}.tr.h{display:none}
  .reqrow{grid-template-columns:1fr}
  .top{border-radius:24px;padding:12px 18px}
+ .toolbar{flex-direction:column;align-items:stretch}
+ .toolbar .filters{flex-direction:column;align-items:stretch}
+ .toolbar select{width:100%}
 }
 @media(prefers-reduced-motion:no-preference){.view.on{animation:in .18s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
 /* Header logo: uses the cropped file images/Logo-top.png */
 .brand{display:block;flex:none}
 .brand img{height:48px;width:auto;display:block}
+.avatar{overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Hero picture: images/help-top.svg fills the hero, the heading sits on top of it */
+.hero{position:relative;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.hero h1{position:relative;z-index:1}
+
+/* Dropdowns: own arrow, 22px from the right edge and centered */
+select{padding-right:52px;cursor:pointer;-webkit-appearance:none;appearance:none;background-color:#fff;background-repeat:no-repeat;background-position:right 22px center;background-size:14px 9px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1.5 1.5 7 7l5.5-5.5' fill='none' stroke='%230B3D2C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+
+/* Form heading spacing (room between the badge, title and subtitle) */
+.form h1{margin:12px 0 6px}
+input[type=file]{padding:5px 10px;font-size:.85rem}
+input[type=file]::file-selector-button{font:inherit;font-size:.85rem;font-weight:700;border:0;border-radius:999px;background:var(--green);color:#04301f;padding:4px 14px;margin-right:8px;cursor:pointer}
+.err{background:var(--pink);color:var(--red);border:1px solid #e9a79d;border-radius:14px;padding:10px 14px;margin-top:14px;font-size:.9rem}
+.err[hidden]{display:none}
+/* ===== Admin polish (sizes unchanged) ===== */
+.card:has(> .tbl),.card:has(> div > .tbl){box-shadow:0 6px 22px rgba(11,61,44,.08)}
+.tbl th{font-weight:700;color:var(--dark);border-bottom:1px solid var(--line)}
+.tbl td{font-weight:600}
+
+/* Accounts: chips on the left, search on the right */
+.toolbar .search{width:340px;margin:0;border:1.5px solid var(--green);border-radius:14px;padding:11px 16px}
+@media(max-width:860px){.toolbar .search{width:100%}}
+
+/* outlined type tag (Organization / Donor) */
+.tag{display:inline-block;min-width:104px;text-align:center;border:1.5px solid var(--green);border-radius:999px;padding:6px 14px;font-weight:700;font-size:.85rem;color:var(--dark);background:#fff}
+
+/* Suspended pill outlined, Active stays filled mint */
+.tbl .b.sus{background:#fff;color:var(--dark);border:1.5px solid var(--green)}
+
+/* ===== Admin wireframes: Dashboard + Accounts + Verifications ===== */
+/* outlined table cards (Verifications, Accounts) */
+.card:has(> .tbl),.card:has(> div > .tbl){border:1.5px solid var(--dark);border-radius:36px;padding:18px 28px 30px;box-shadow:none}
+.tbl th{border-bottom:1px solid var(--dark)}
+
+/* search: pill outline on the right of the chips */
+.toolbar .search{width:340px;border:1.5px solid var(--dark);border-radius:999px;padding:10px 18px}
+
+/* Dashboard: stat numbers centred */
+.statrow .yelbox .big{text-align:center;margin:6px 0 10px}
+
+/* Dashboard: review table (left) + Donations Overview (right) */
+.dash-row{display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:stretch}
+.dash-row>.card{border:1.5px solid var(--dark);border-radius:32px;padding:22px 26px}
+.dash-row h2{margin-bottom:8px}
+.ovcard{display:flex;flex-direction:column}
+.ovr{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--dark);border-radius:999px;padding:7px 24px 7px 8px;margin-top:12px;font-weight:800;font-size:1.05rem}
+.ovr .b{min-width:100px;text-align:center}
+.ovcard .mute{margin-top:auto;padding-top:18px;font-size:.85rem}
+@media(max-width:860px){.dash-row{grid-template-columns:1fr}}
+/* ===== Added to match the wireframe: paste at the END of style.css ===== */
+.browse{display:inline;margin:0;font-weight:400;text-decoration:underline;cursor:pointer}
+.small{font-size:.8rem}
+.chip{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 20px;margin-top:10px}
+.link{background:none;border:0;font:inherit;font-weight:700;color:var(--dark);cursor:pointer}
+.headrow{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.headrow>.b{margin-top:8px}
+.filterrow{display:grid;grid-template-columns:1fr 1fr auto;gap:16px;align-items:end}
+.catbar{display:flex;align-items:center;gap:16px;border-radius:999px;padding:14px 26px;flex-wrap:wrap}
+.catbar .pills{margin:0}
+.matchgrid{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start}
+.rule{border:0;border-top:1px solid #b9dcc8;margin:16px 0}
+.facts{gap:12px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.textlink{font-weight:700;text-decoration:underline}
+.icon img{width:100%;height:100%;object-fit:contain;padding:8px;display:block}
+.icon{overflow:hidden}
+.tl .no i{position:relative}
+.tl .no i::after{content:"\00d7";position:absolute;inset:0;display:grid;place-items:center;font-weight:800;line-height:1;font-size:1.1rem}
+.stage{position:relative}
+.mintbox .g4 .stage:not(:last-child)::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--dark);font-weight:800;background:var(--mint);padding:0 1px;z-index:1}
+.pager .pg{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--green);background:#fff;font:inherit;font-weight:700;cursor:pointer}
+.pager .pg.on{background:var(--dark);color:#fff;border-color:var(--dark)}
+@media(max-width:860px){.filterrow,.matchgrid{grid-template-columns:1fr}.catbar{border-radius:24px}.mintbox .g4 .stage::after{display:none}}
+.mintbox .b:not(.dark):not(.del):not(.wait){background:#fff}
+/* filtered rows disappear, empty message is centred */
+.tbl tr[hidden]{display:none}
+.tbl tr.none td{text-align:center;color:var(--mute);font-weight:400;border-bottom:0;padding:28px 10px}
+
+/* show / hide password */
+.pw{position:relative}
+.pw input{padding-right:78px}
+.pw-toggle{position:absolute;right:18px;top:50%;transform:translateY(-50%);background:none;border:0;font:inherit;font-weight:700;font-size:.85rem;color:var(--dark);cursor:pointer;padding:6px 4px}
+.pw-toggle:hover{text-decoration:underline}
+
+/* hide the browser's own eye icon so only our Show/Hide button appears */
+input[type=password]::-ms-reveal,input[type=password]::-ms-clear{display:none}
+/* show / hide password */
+.pw{position:relative}
+.pw input{padding-right:78px}
+.pw-toggle{position:absolute;right:18px;top:50%;transform:translateY(-50%);background:none;border:0;font:inherit;font-weight:700;font-size:.85rem;color:var(--dark);cursor:pointer;padding:6px 4px}
+.pw-toggle:hover{text-decoration:underline}
+
+/* hide the browser's own eye icon so only our Show/Hide button appears */
+input[type=password]::-ms-reveal,input[type=password]::-ms-clear{display:none}

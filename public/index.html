@@ -13,7 +13,7 @@
 <!-- ============ PUBLIC ============ -->
 <section class="view" data-v="home" data-role="pub">
   <div class="hero-row">
-    <div class="hero" style="background-image:linear-gradient(to top,rgba(11,61,44,.88) 0%,rgba(11,61,44,.4) 35%,rgba(11,61,44,0) 65%),url(/images/donate.jpg)"><h1>Mabuhay! Give where it is needed most.</h1></div>
+    <div class="hero"><img class="hero-img" src="/images/donate.svg" alt=""><h1>Mabuhay! Give where it is needed most.</h1></div>
     <div class="mintbox stack">
       <div class="eyebrow">GET STARTED</div>
       <div class="card"><h3>I am an Organization</h3><p class="mute">Post what your community needs.</p>
@@ -69,9 +69,9 @@
         <div><h3>What the system does</h3><p class="mute">Posts requests, matches donors and tracks every donation.</p></div></div>
       <div class="mintbox" style="min-height:200px"><h2>Project Information</h2></div></div>
     <div class="card"><div class="eyebrow">Meet Team SKC</div>
-      <div class="person"><span class="avatar"></span><div><b>Chelsea Mae T. Antig</b><br><span class="mute">UI/UX Designer</span></div></div>
-      <div class="person"><span class="avatar"></span><div><b>Shannel V. De Leon</b><br><span class="mute">Sub Programmer</span></div></div>
-      <div class="person"><span class="avatar"></span><div><b>Khate D. Hernandez</b><br><span class="mute">Lead Developer</span></div></div>
+   <div class="person"><span class="avatar"><img src="/images/chelsea.png" alt="Chelsea"></span><div><b>Chelsea Mae T. Antig</b><br><span class="mute">UI/UX Designer</span></div></div>
+<div class="person"><span class="avatar"><img src="/images/anne.jpg" alt="Shannel"></span><div><b>Shannel V. De Leon</b><br><span class="mute">Sub Programmer</span></div></div>
+<div class="person"><span class="avatar"><img src="/images/khate.jpg" alt="Khate"></span><div><b>Khate D. Hernandez</b><br><span class="mute">Lead Developer</span></div></div>
       <div class="mintbox"><h3>Contact and Feedback</h3><p class="mute">Questions or ideas? We read every message.</p><a class="btn solid mt" href="mailto:">Email the team</a></div></div>
   </div>
 </section>
@@ -80,21 +80,21 @@
 <section class="view" data-v="login-org" data-role="auth"><form class="card form" style="max-width:580px">
   <span class="b dark">ORGANIZATION</span><h1 class="c">Log In as Organization</h1><p class="sub">Welcome back. Post and track your requests.</p>
   <label for="o-e">Email</label><input id="o-e" type="email" placeholder="name@organization.com" required>
-  <label for="o-p">Password</label><input id="o-p" type="password" placeholder="••••••••" required>
+  <label for="o-p">Password</label><input id="o-p" type="password" placeholder="Enter your password" required>
   <button class="btn solid full mt">Log In</button>
   <p class="alt">New here? <a href="#/signup-org">Sign Up as Organization</a><br>Not an Organization? <a href="#/login-donor">Log in as Donor</a></p></form></section>
 
 <section class="view" data-v="login-donor" data-role="auth"><form class="card form" style="max-width:580px">
   <span class="b dark">DONOR</span><h1 class="c">Log In as Donor</h1><p class="sub">Welcome back. Find a request to fulfill.</p>
   <label for="d-e">Email</label><input id="d-e" type="email" placeholder="name@email.com" required>
-  <label for="d-p">Password</label><input id="d-p" type="password" placeholder="••••••••" required>
+  <label for="d-p">Password</label><input id="d-p" type="password" placeholder="Enter your password" required>
   <button class="btn solid full mt">Log In</button>
   <p class="alt">New here? <a href="#/signup-donor">Sign up as Donor</a><br>Not a Donor? <a href="#/login-org">Log in as Organization</a></p></form></section>
 
 <section class="view" data-v="login-admin" data-role="auth"><form class="card form" style="max-width:580px">
   <span class="b dark">ADMIN</span><h1 class="c">Log In as Admin</h1><p class="sub">Review organizations and manage accounts.</p>
   <label for="a-e">Email</label><input id="a-e" type="email" placeholder="name@email.com" required>
-  <label for="a-p">Password</label><input id="a-p" type="password" placeholder="••••••••" required>
+  <label for="a-p">Password</label><input id="a-p" type="password" placeholder="Enter your password" required>
   <button class="btn solid full mt">Log In</button>
   <p class="alt">Admin accounts are created by the team.</p></form></section>
 
@@ -103,8 +103,8 @@
   <label for="sd-n">Full name or group name</label><input id="sd-n" placeholder="e.g. Juan Dela Cruz" required>
   <label for="sd-t">Type</label><select id="sd-t"><option>Individual</option><option>Group</option></select>
   <label for="sd-e">Email</label><input id="sd-e" type="email" placeholder="name@email.com" required>
-  <label for="sd-p">Password</label><input id="sd-p" type="password" placeholder="••••••••" required>
-  <label for="sd-c">Confirm Password</label><input id="sd-c" type="password" placeholder="••••••••" required>
+  <label for="sd-p">Password</label><input id="sd-p" type="password" placeholder="Enter your password" required>
+  <label for="sd-c">Confirm Password</label><input id="sd-c" type="password" placeholder="Enter your password again" required>
   <button class="btn solid full mt">Create Donor Account</button>
   <p class="alt">Already have an account? <a href="#/login-donor">Log in as Donor</a><br>Not a Donor? <a href="#/login-org">Log in as Organization</a></p></form></section>
 
@@ -113,14 +113,15 @@
   <div class="g2" style="align-items:start">
     <div>
       <label for="so-n">Organization Name</label><input id="so-n" placeholder="e.g. Barangay San Roque" required>
-      <label for="so-t">Type</label><select id="so-t"><option>LGU</option><option>NGO</option><option>Barangay</option><option>Company</option></select>
+      <label for="so-t">Type</label><select id="so-t" required><option value="">Choose one</option><option>LGU</option><option>NGO</option><option>Barangay</option><option>Company</option></select>
       <label for="so-e">Email</label><input id="so-e" type="email" placeholder="name@organization.com" required>
-      <label for="so-p">Password</label><input id="so-p" type="password" placeholder="••••••••" required>
-      <label for="so-c">Confirm Password</label><input id="so-c" type="password" placeholder="••••••••" required></div>
+      <label for="so-p">Password</label><input id="so-p" type="password" placeholder="Enter your password" required>
+      <label for="so-c">Confirm Password</label><input id="so-c" type="password" placeholder="Enter your password again" required></div>
     <div>
       <label for="so-d">Document Type</label><select id="so-d"><option value="">Choose one</option><option>Barangay / LGU certification</option><option>SEC, DTI or NGO registration</option><option>Business permit or company ID</option><option>Letter of authority + ID</option></select>
       <label for="so-f">Upload proof</label>
-      <div class="drop"><b>Drag and drop your file here</b><br><span class="mute">or browse · JPG, PNG or PDF · max 5 MB</span><br><input id="so-f" type="file" accept=".jpg,.jpeg,.png,.pdf" style="margin-top:10px" required></div>
+      <div class="drop" id="so-drop"><b>Drag and drop your file here</b><br><span class="mute">or <label for="so-f" class="browse">Browse files</label></span><br><span class="mute small">JPG, PNG or PDF | max 5mb</span><input id="so-f" type="file" accept=".jpg,.jpeg,.png,.pdf" hidden></div>
+      <div class="chip"><span id="so-fn" class="mute">No file chosen</span><button type="button" id="so-rm" class="link">Remove</button></div>
       <div class="mintbox mt"><div class="eyebrow">ACCEPTED PROOF</div><ul class="list"><li>Barangay / LGU certification or resolution</li><li>SEC, DTI or NGO registration</li><li>Business permit or company ID</li><li>Letter of authority + representative's ID</li></ul></div></div>
   </div>
   <label class="chk"><input type="checkbox" required> I confirm that the proof I uploaded is genuine and belongs to my organization</label>
@@ -135,28 +136,21 @@
       <h2 class="mt">Your account is under review</h2><p class="mute">We will show the result here as soon as an admin decides.</p>
       <ul class="tl mt"><li class="done"><i></i><b>Proof submitted</b><span class="mute" data-bind="submitted">[Date]</span></li><li class="done"><i></i><b>Admin review</b><span class="mute">[Date]</span></li><li><i></i><b>Approved</b><span class="mute">[Date]</span></li></ul>
       <div class="mintbox"><div class="eyebrow">LOCKED UNTIL APPROVED</div><ul class="list"><li>You can log in and view this page.</li><li>Posting requests stays locked until approved.</li><li>The result shows here once an admin decides.</li></ul></div>
-      <div class="right mt" style="justify-content:flex-start"><button class="btn">View submitted proof</button><a class="btn" href="#/home">Log out</a></div></div>
+      <div class="right mt" style="justify-content:flex-start"><a class="btn" href="/api/my-proof" target="_blank" rel="noopener">View submitted proof</a><a class="btn" href="#/home" data-logout>Log out</a></div></div>
     <div class="card"><div class="eyebrow">IF REJECTED</div><span class="b rej">Rejected</span>
       <h2 class="mt">We couldn't verify your proof</h2><p class="mute">Fix what the admin noted and send it again.</p>
-      <ul class="tl mt"><li class="done"><i></i><b>Proof submitted</b><span class="mute">[Date]</span></li><li class="done"><i></i><b>Admin review</b><span class="mute">[Date]</span></li><li><i></i><b>Not approved</b><span class="mute">[Date]</span></li></ul>
+      <ul class="tl mt"><li class="done"><i></i><b>Proof submitted</b><span class="mute">[Date]</span></li><li class="done"><i></i><b>Admin review</b><span class="mute">[Date]</span></li><li class="no"><i></i><b>Not approved</b><span class="mute">[Date]</span></li></ul>
       <div class="mintbox"><div class="eyebrow">REASON FROM ADMIN</div><p data-bind="reason">Photo is blurry or name does not match.</p></div>
       <div class="right mt" style="justify-content:flex-start"><a class="btn solid" href="#/signup-org">Resubmit Proof</a><a class="btn" href="#/about">Contact Team SKC</a></div></div>
   </div>
 </section>
 
-<!-- ============ ORGANIZATION ============ -->
+<!-- Dashboard = Hello + Post a Request (as in the wireframe) -->
 <section class="view" data-v="org-home" data-role="org">
-  <h1>Hello, <span data-bind="orgname">[Organization Name]</span></h1>
-  <div class="g2 mt">
-    <div class="card"><h3>Post a Request</h3><p class="mute">Tell donors exactly what your community needs.</p><a class="btn solid mt" href="#/org-post">Post a Request</a></div>
-    <div class="card"><h3>My Requests</h3><p class="mute">Everything you have posted and where it stands.</p><a class="btn mt" href="#/org-requests">My Requests</a></div>
-  </div>
-</section>
-
-<section class="view" data-v="org-post" data-role="org" data-nav="org-home">
-  <h1>Post a Request</h1><p class="sub">Tell donors exactly what your community needs.</p>
+  <h1>Hello, <span data-bind="orgName">[Organization Name]</span></h1>
+  <h2 class="mt">Post a Request</h2><p class="sub">Tell donors exactly what your community needs.</p>
   <div class="g2" style="align-items:start">
-    <form class="card form" id="post-form">
+    <form class="card form" id="post-form" style="max-width:none;margin:0">
       <label for="p-c">Category</label>
       <select id="p-c"><option value="">Choose one</option><option>Food</option><option>Clothing</option><option>School Supplies</option><option>Clean Water and Sanitation</option><option>Hygiene Supplies</option></select>
       <label for="p-i">What do you need?</label><input id="p-i" placeholder="e.g. packs of rice" required>
@@ -164,112 +158,119 @@
         <div><label for="p-q">Quantity</label><input id="p-q" type="number" min="1" placeholder="e.g. 50" required></div>
         <div><label for="p-u">Unit</label><input id="p-u" placeholder="packs / pieces / boxes" required></div>
       </div>
-      <label for="p-d">Details</label><textarea id="p-d" rows="4" placeholder="Add notes donors should know, such as size, brand or delivery address."></textarea>
+      <label for="p-d">Details</label><textarea id="p-d" rows="4" placeholder="Add any notes donors should know, such as size, brand or delivery address."></textarea>
       <div class="g2 mt"><button class="btn solid">Submit Request</button><a class="btn" href="#/org-home">Cancel</a></div>
     </form>
     <div class="stack">
       <div class="mintbox"><div class="eyebrow">BEFORE YOU POST</div>
         <ul class="list"><li>Pick the category that fits best.</li><li>Be specific about the item and amount.</li><li>Your request stays Waiting until a donor picks it.</li></ul></div>
       <div class="card"><div class="eyebrow">Preview: how donors see your request</div>
-        <h3>Food</h3><p><b>50 packs of rice</b></p><p class="mute">Barangay San Roque</p><button class="btn solid" type="button">Donate</button>
+        <div class="card"><span class="b" id="pv-cat">Food</span><p class="mt"><b id="pv-item">50 packs of rice</b></p><p class="mute" data-bind="orgName">Barangay San Roque</p><button class="btn solid mt" type="button">Donate</button></div>
         <p class="mute mt">The preview updates as you fill in the form.</p></div>
     </div>
   </div>
 </section>
 
-<section class="view" data-v="org-requests" data-role="org" data-nav="org-home">
+<section class="view" data-v="org-requests" data-role="org">
   <h1>My Requests</h1><p class="sub">Everything you have posted and where it stands.</p>
-  <div class="pills mt"><button class="pill on" type="button">All</button><button class="pill" type="button">Waiting</button><button class="pill" type="button">Donated</button><button class="pill" type="button">Delivered</button><button class="pill" type="button">Received</button></div>
+  <div class="pills mt" id="or-pills"><button class="pill on" type="button" data-f="all">All</button><button class="pill" type="button" data-f="WAITING">Waiting</button><button class="pill" type="button" data-f="DONATED">Donated</button><button class="pill" type="button" data-f="DELIVERED">Delivered</button><button class="pill" type="button" data-f="RECEIVED">Received</button></div>
   <div class="card mt" style="overflow-x:auto"><table class="tbl">
-    <thead><tr><th>Request</th><th>Category</th><th>Date Posted</th><th>Donor</th><th>Status</th><th>Action</th></tr></thead>
-    <tbody>
-      <tr><td>50 packs of rice</td><td>Food</td><td>Nov 7</td><td>No donor yet</td><td><span class="b wait">Waiting</span></td><td>No action yet</td><td><a href="#/request-detail">Details</a></td></tr>
-      <tr><td>30 notebooks</td><td>School Supplies</td><td>Nov 5</td><td>Juan Dela Cruz</td><td><span class="b">Donated</span></td><td>Donor is on it</td><td><a href="#/request-detail">Details</a></td></tr>
-      <tr><td>20 blankets</td><td>Clothing</td><td>Nov 2</td><td>Ana Reyes</td><td><span class="b del">Delivered</span></td><td><a href="#/org-confirm">Confirm Receipt</a></td><td><a href="#/request-detail">Details</a></td></tr>
-    </tbody></table></div>
+    <thead><tr><th>Request</th><th>Category</th><th>Date Posted</th><th>Donor</th><th>Status</th><th>Action</th><th></th></tr></thead>
+    <tbody id="or-body"></tbody></table></div>
 </section>
 
-<section class="view" data-v="org-confirm" data-role="org" data-nav="org-home">
-  <h1>Confirm Receipts</h1><p class="sub">Confirm only when the items have actually arrived.</p>
-  <div class="mintbox"><div class="eyebrow">3 waiting for confirmation</div></div>
-  <div class="card mt"><span class="b del">Delivered</span>
-    <h3>Food: 50 packs of rice</h3>
-    <p class="mute">Delivered by Juan Dela Cruz. Marked delivered on Nov 12.</p>
-    <div class="g2 mt"><button class="btn solid">Confirm Received</button><button class="btn">Report a Problem</button></div></div>
-  <p class="mute mt">Nothing to confirm right now. Delivered donations will show up here.</p>
+<section class="view" data-v="org-confirm" data-role="org">
+  <div class="headrow"><div><h1>Confirm Receipts</h1><p class="sub">Confirm only when the items have actually arrived.</p></div>
+    <span class="b dark" id="cf-count">0 Waiting for Confirmation</span></div>
+  <div id="cf-list"></div>
+  <div class="empty mt" id="cf-empty" hidden><h3>Nothing to confirm right now.</h3><p class="mute">Delivered donations will show up here for you to confirm.</p></div>
 </section>
 
 <!-- ============ DONOR ============ -->
 <section class="view" data-v="donor-home" data-role="donor">
-  <h1>Hello, <span data-bind="donorname">Donor</span>!</h1><p class="sub">Pick up where you left off.</p>
-  <div class="g3 mt">
-    <div class="card"><h3>Browse Requests</h3><p class="mute">See everything that is waiting for a donor.</p><a class="btn solid mt" href="#/donor-browse">Browse Requests</a></div>
-    <div class="card"><h3>Find a Match</h3><p class="mute">We suggest the request that has waited longest.</p><a class="btn solid mt" href="#/donor-match">Find a Match</a></div>
-    <div class="card"><h3>My Donations</h3><p class="mute">Track each gift from donation to delivery.</p><a class="btn mt" href="#/donor-donations">My Donations</a></div>
+  <h1>Hello, <span data-bind="donorName">Donor</span>!</h1><p class="sub">Pick up where you left off.</p>
+  <div class="g2 mt" style="align-items:start">
+    <div class="card"><h2>Browse Requests</h2>
+      <div class="g2 mt">
+        <select id="h-c" aria-label="Category"><option value="">Category</option><option>Food</option><option>Clothing</option><option>School Supplies</option><option>Clean Water and Sanitation</option><option>Hygiene Supplies</option></select>
+        <select id="h-o" aria-label="Organization"><option value="">Organization</option></select></div>
+      <a class="btn full mt" href="#/donor-browse">Browse Requests</a></div>
+    <div class="card"><h2>Find a Match</h2>
+      <div class="g2 mt">
+        <select id="h-mc" aria-label="Category"><option value="">Category</option><option>Food</option><option>Clothing</option><option>School Supplies</option><option>Clean Water and Sanitation</option><option>Hygiene Supplies</option></select>
+        <select id="h-mo" aria-label="Organization (optional)"><option value="">Organization</option></select></div>
+      <a class="btn solid full mt" href="#/donor-match">Find a Match</a></div>
   </div>
+  <div class="card mt" style="overflow-x:auto"><h2>My Donations</h2><table class="tbl">
+    <thead><tr><th>Requests</th><th>Organization</th><th>Status</th><th>Action</th></tr></thead>
+    <tbody id="dh-body"></tbody></table></div>
 </section>
 
-<section class="view" data-v="donor-browse" data-role="donor" data-nav="donor-home">
+<section class="view" data-v="donor-browse" data-role="donor">
   <h1>Browse Requests</h1>
-  <div class="pills mt"><button class="pill on" type="button">All</button><button class="pill" type="button">Food</button><button class="pill" type="button">Clothing</button><button class="pill" type="button">School Supplies</button><button class="pill" type="button">Clean Water and Sanitation</button><button class="pill" type="button">Hygiene Supplies</button></div>
-  <div class="g2 mt"><div><label for="f-c">Category</label><select id="f-c"><option>All</option></select></div><div><label for="f-o">Organization</label><select id="f-o"><option>All</option></select></div></div>
+  <div class="pills mt" id="b-pills"><button class="pill on" type="button">All</button><button class="pill" type="button">Food</button><button class="pill" type="button">Clothing</button><button class="pill" type="button">School Supplies</button><button class="pill" type="button">Clean Water and Sanitation</button><button class="pill" type="button">Hygiene Supplies</button></div>
+  <div class="filterrow mt">
+    <div><label for="f-c">Category</label><select id="f-c"><option>All</option></select></div>
+    <div><label for="f-o">Organization</label><select id="f-o"><option>All</option></select></div>
+    <button class="btn" type="button" id="b-filter">Filter</button></div>
   <div class="card mt" style="overflow-x:auto"><table class="tbl">
     <thead><tr><th>Request</th><th>Category</th><th>Organization</th><th>Waiting</th><th>Action</th></tr></thead>
-    <tbody>
-      <tr><td>50 packs of rice</td><td>Food</td><td>Barangay San Roque</td><td>3 days</td><td><a class="btn solid" href="#/request-detail">Donate</a></td></tr>
-      <tr><td>40 hygiene kits</td><td>Hygiene Supplies</td><td>Pag-asa Foundation</td><td>6 days</td><td><a class="btn solid" href="#/request-detail">Donate</a></td></tr>
-    </tbody></table></div>
+    <tbody id="br-body"></tbody></table></div>
 </section>
 
-<section class="view" data-v="donor-match" data-role="donor" data-nav="donor-home">
+<section class="view" data-v="donor-match" data-role="donor">
   <h1>Find a Match</h1><p class="sub">Choose a category and we will suggest a request.</p>
-  <div class="g2" style="align-items:start">
-    <div class="card"><label for="m-c">Category</label>
-      <select id="m-c"><option>Food</option><option>Clothing</option><option>School Supplies</option><option>Clean Water</option><option>Hygiene</option></select>
-      <div class="eyebrow mt">Suggested Match</div><span class="b wait">Longest Waiting</span>
-      <h2 class="mt">50 packs of rice</h2>
-      <p class="mute">Organization: Barangay San Roque<br>Waiting since: Nov 7<br>Quantity: 50 packs<br>Details: Deliver to the barangay hall.</p>
-      <div class="g2 mt"><button class="btn solid">Donate This Request</button><button class="btn">Show Me Another</button></div>
-      <p class="mt"><a href="#/donor-match">Change Category</a></p></div>
+  <div class="card catbar"><b>Category</b>
+    <div class="pills" id="m-c"><button class="pill on" type="button">Food</button><button class="pill" type="button">Clothing</button><button class="pill" type="button">School Supplies</button><button class="pill" type="button">Clean Water</button><button class="pill" type="button">Hygiene</button></div></div>
+  <div class="matchgrid mt">
+    <div class="mintbox">
+      <div id="mt-content">
+      <div><span class="b dark">Suggested Match</span> <span class="b" id="mt-strategy">Longest Waiting</span></div>
+      <p class="mt"><span class="b" id="mt-cat">Food</span></p>
+      <h2 id="mt-title">50 packs of rice</h2><p class="mute" id="mt-by">Posted by Barangay San Roque</p>
+      <hr class="rule">
+      <div class="g3 facts"><div><div class="mute">Organization</div><b id="mt-org">-</b></div><div><div class="mute">Waiting Since</div><b id="mt-since">-</b></div><div><div class="mute">Quantity</div><b id="mt-qty">-</b></div></div>
+      <div class="mt"><div class="mute">Details</div><p id="mt-details">-</p></div>
+      <div class="actions mt"><button class="btn solid" type="button" id="mt-donate">Donate This Request</button><button class="btn" type="button" id="mt-next">Show Me Another</button><a class="textlink" href="#/donor-match" id="mt-reset">Change Category</a></div>
+      </div>
+      <div class="empty" id="mt-none" hidden><h3>No waiting requests here.</h3><p class="mute">Try another category, or use Browse Requests.</p><a class="btn mt" href="#/donor-browse">Browse Requests</a></div></div>
     <div class="stack">
-      <div class="mintbox"><div class="eyebrow">How matching works</div>
-        <p class="mute">We check all waiting requests in the category. The one posted earliest is suggested first. "Show me another" moves to the next longest.</p></div>
-      <div class="card"><p class="mute">No waiting requests here. Try another category, or use Browse Requests.</p></div>
+      <div class="card"><div class="eyebrow">How matching works</div>
+        <ul class="list"><li>We check all waiting requests in the category.</li><li>The one posted earliest is suggested first.</li><li>"Show me another" moves to the next longest.</li></ul></div>
     </div>
   </div>
 </section>
 
-<section class="view" data-v="donor-donations" data-role="donor" data-nav="donor-home">
+<section class="view" data-v="donor-donations" data-role="donor">
   <h1>My Donations</h1><p class="sub">Track each gift from donation to delivery.</p>
   <div class="g3 mt">
-    <div class="yelbox"><h3>Donated</h3><div class="big">0</div><p>In process</p></div>
-    <div class="yelbox"><h3>Delivered</h3><div class="big">0</div><p>Waiting for confirmation</p></div>
-    <div class="yelbox"><h3>Received</h3><div class="big">0</div><p>Completed</p></div>
+    <div class="yelbox"><h3>Donated</h3><div class="big" id="dd-donated">0</div><p>In process</p></div>
+    <div class="yelbox"><h3>Delivered</h3><div class="big" id="dd-delivered">0</div><p>Waiting for confirmation</p></div>
+    <div class="yelbox"><h3>Received</h3><div class="big" id="dd-received">0</div><p>Completed</p></div>
   </div>
-  <div class="pills mt"><button class="pill on" type="button">All</button><button class="pill" type="button">Donated</button><button class="pill" type="button">Delivered</button><button class="pill" type="button">Received</button></div>
+  <div class="pills mt" id="dd-pills"><button class="pill on" type="button" data-f="all">All</button><button class="pill" type="button" data-f="DONATED">Donated</button><button class="pill" type="button" data-f="DELIVERED">Delivered</button><button class="pill" type="button" data-f="RECEIVED">Received</button></div>
   <div class="card mt" style="overflow-x:auto"><table class="tbl">
-    <thead><tr><th>Request</th><th>Organization</th><th>Date Donated</th><th>Status</th><th>Action</th></tr></thead>
-    <tbody>
-      <tr><td>50 packs of rice</td><td>Barangay San Roque</td><td>Nov 10</td><td><span class="b">Donated</span></td><td><button class="btn solid">Mark Delivered</button></td><td><a href="#/request-detail">Details</a></td></tr>
-      <tr><td>20 blankets</td><td>Pag-asa Foundation</td><td>Nov 4</td><td><span class="b del">Delivered</span></td><td>Waiting for confirmation</td><td><a href="#/request-detail">Details</a></td></tr>
-    </tbody></table></div>
+    <thead><tr><th>Request</th><th>Organization</th><th>Date Donated</th><th>Status</th><th>Action</th><th></th></tr></thead>
+    <tbody id="dd-body"></tbody></table>
+    <div class="pager" id="dd-pager" hidden></div></div>
 </section>
 
 <!-- ============ SHARED ============ -->
-<section class="view" data-v="request-detail" data-role="donor" data-nav="donor-donations">
-  <p><a href="#/donor-donations">&lt; Back to my Donations</a></p>
+<section class="view" data-v="request-detail" data-role="shared">
+  <p><a href="#/donor-donations" id="rd-back">&lt; Back to my Donations</a></p>
   <h1>Request Details</h1><p class="sub">Everything about this request in one place.</p>
   <div class="g2" style="align-items:start">
-    <div class="card"><span class="b">Food</span> <span class="b del">Delivered</span>
-      <h2 class="mt">50 packs of rice</h2>
-      <p class="mute">Organization: Barangay San Roque<br>Quantity: 50 packs<br>Date Posted: Nov 7<br>Donor: Juan Dela Cruz<br>Date Donated: Nov 10<br>Date Delivered: Nov 12<br>Details: Deliver to the barangay hall.</p>
-      <button class="btn solid mt">Donate this Request</button><p class="mute">Shown only when status is Waiting.</p></div>
+    <div class="card"><span class="b" id="rd-cat">Food</span> <span class="b" id="rd-status">Waiting</span>
+      <h2 class="mt" id="rd-title">-</h2>
+      <p class="mute" id="rd-info"></p>
+      <p class="err" id="rd-err" hidden></p>
+      <button class="btn solid mt" type="button" id="rd-donate" hidden>Donate this Request</button><p class="mute" id="rd-note" hidden>Shown only when status is Waiting.</p></div>
     <div class="card"><div class="eyebrow">Progress tracker</div><h3>Where is this request?</h3>
-      <ul class="tl mt">
-        <li class="done"><i></i><b>Waiting</b><span class="mute">Posted by the organization Nov 7</span></li>
-        <li class="done"><i></i><b>Donated</b><span class="mute">A donor picked it Nov 10</span></li>
-        <li class="done"><i></i><b>Delivered</b><span class="mute">Donor sent the items Nov 12</span></li>
-        <li><i></i><b>Received</b><span class="mute">Organization confirms: Pending</span></li>
+      <ul class="tl mt" id="rd-track">
+        <li><i></i><b>Waiting</b><span class="mute">-</span></li>
+        <li><i></i><b>Donated</b><span class="mute">-</span></li>
+        <li><i></i><b>Delivered</b><span class="mute">-</span></li>
+        <li><i></i><b>Received</b><span class="mute">-</span></li>
       </ul></div>
   </div>
 </section>
@@ -277,30 +278,36 @@
 <!-- ============ ADMIN ============ -->
 <section class="view" data-v="admin-home" data-role="admin">
   <h1>Hello, Admin</h1><p class="sub">Here is what needs your attention today.</p>
-  <div class="g3 mt">
-    <div class="yelbox"><h3>Pending Verifications</h3><div class="big">0</div><p>Needs review</p></div>
-    <div class="yelbox"><h3>Approved organizations</h3><div class="big">0</div><p>Verified</p></div>
-    <div class="yelbox"><h3>Rejected</h3><div class="big">0</div><p>Can resubmit</p></div>
+  <div class="g3 mt statrow">
+    <div class="yelbox"><h3>Pending Verifications</h3><div class="big" id="dash-pending">0</div><p>Needs review</p></div>
+    <div class="yelbox"><h3>Approved organizations</h3><div class="big" id="dash-approved">0</div><p>Verified</p></div>
+    <div class="yelbox"><h3>Rejected</h3><div class="big" id="dash-rejected">0</div><p>Can resubmit</p></div>
   </div>
-  <div class="card mt"><h2>Waiting for review</h2><div style="overflow-x:auto"><table class="tbl">
-    <thead><tr><th>Organization</th><th>Org Type</th><th>Submitted</th><th>Action</th></tr></thead>
-    <tbody><tr><td>Barangay San Roque</td><td>Barangay</td><td>Nov 12</td><td><a class="btn solid" href="#/admin-review">Review</a></td></tr></tbody></table></div></div>
-  <div class="mintbox mt"><h2>Donations Overview</h2>
-    <div class="g4"><div class="stage"><span class="b wait">Waiting</span><b>0</b></div><div class="stage"><span class="b">Donated</span><b>0</b></div><div class="stage"><span class="b del">Delivered</span><b>0</b></div><div class="stage"><span class="b">Received</span><b>0</b></div></div>
-    <p class="mute">Counts update as donors and organizations act.</p></div>
+  <div class="dash-row mt">
+    <div class="card"><h2>Waiting for review</h2><div style="overflow-x:auto"><table class="tbl">
+      <thead><tr><th>Organization</th><th>Org Type</th><th>Submitted</th><th>Action</th></tr></thead>
+      <tbody id="dash-review"></tbody></table></div></div>
+    <div class="card ovcard"><h2>Donations Overview</h2>
+      <div class="ovr"><span class="b wait">Waiting</span><b id="ov-waiting">0</b></div>
+      <div class="ovr"><span class="b">Donated</span><b id="ov-donated">0</b></div>
+      <div class="ovr"><span class="b del">Delivered</span><b id="ov-delivered">0</b></div>
+      <div class="ovr"><span class="b">Received</span><b id="ov-received">0</b></div>
+      <p class="mute">Counts update as donors and organizations act.</p></div>
+  </div>
 </section>
 
 <section class="view" data-v="admin-verify" data-role="admin">
   <h1>Verifications</h1><p class="sub">Review proof submitted by organizations.</p>
-  <div class="pills mt"><button class="pill on" type="button">All</button><button class="pill" type="button">Pending</button><button class="pill" type="button">Approved</button><button class="pill" type="button">Rejected</button></div>
-  <label for="v-t">Org Type</label><select id="v-t"><option>All</option><option>LGU</option><option>NGO</option><option>Barangay</option><option>Company</option></select>
-  <div class="card mt" style="overflow-x:auto"><table class="tbl">
+  <div class="toolbar">
+    <div class="pills"><button class="pill on" type="button" data-f="all">All</button><button class="pill" type="button" data-f="pending">Pending</button><button class="pill" type="button" data-f="approved">Approved</button><button class="pill" type="button" data-f="rejected">Rejected</button></div>
+    <div class="filters">
+      <select id="v-t" aria-label="Org Type"><option value="">Org Type: All</option><option>LGU</option><option>NGO</option><option>Barangay</option><option>Company</option></select>
+      <button class="btn" type="button" data-filter>Filter</button>
+    </div>
+  </div>
+  <div class="card" style="overflow-x:auto"><table class="tbl">
     <thead><tr><th>Organization</th><th>Org Type</th><th>Proof</th><th>Date Submitted</th><th>Status</th><th>Action</th></tr></thead>
-    <tbody>
-      <tr><td>Barangay San Roque</td><td>Barangay</td><td>Certification</td><td>Nov 12</td><td><span class="b pen">Pending</span></td><td><a class="btn solid" href="#/admin-review">Review</a></td></tr>
-      <tr><td>Pag-asa Foundation</td><td>NGO</td><td>SEC registration</td><td>Nov 3</td><td><span class="b">Approved</span></td><td><a href="#/admin-review">View</a></td></tr>
-      <tr><td>Kapit-Bisig Co.</td><td>Company</td><td>Business permit</td><td>Nov 1</td><td><span class="b rej">Rejected</span></td><td><a href="#/admin-review">View</a></td></tr>
-    </tbody></table></div>
+    <tbody id="vf-body"></tbody></table></div>
 </section>
 
 <section class="view" data-v="admin-review" data-role="admin" data-nav="admin-verify">
@@ -308,10 +315,11 @@
   <h1>Review Verification</h1><p class="sub">Check the proof against the account details.</p>
   <div class="g2" style="align-items:start">
     <div class="stack">
-      <div class="card"><span class="b dark">ORGANIZATION</span> <span class="b pen">Pending</span>
-        <p class="mute mt">Organization: Barangay San Roque<br>Email: sanroque@email.com<br>Org Type: Barangay<br>Date Submitted: Nov 12<br>Proof Type: Certification</p></div>
+      <div class="card"><span class="b dark">ORGANIZATION</span> <span id="rv-status"></span>
+        <h2 class="mt" id="rv-name">Organization</h2>
+        <p class="mute mt" id="rv-meta"></p></div>
       <div class="card"><div class="eyebrow">Submitted Proof</div>
-        <div class="drop">[Proof image / PDF preview]</div><a class="btn mt" href="#">Open full size</a></div>
+        <div class="drop" id="rv-proof">[Proof image / PDF preview]</div><a class="btn mt" id="rv-open" href="#" target="_blank" rel="noopener">Open full size</a></div>
     </div>
     <div class="stack">
       <div class="card"><div class="eyebrow">Verification Checklist</div>
@@ -319,25 +327,24 @@
         <label class="chk"><input type="checkbox"> Proof is clear, readable and not expired</label>
         <label class="chk"><input type="checkbox"> Proof looks genuine (no signs of editing)</label>
         <label class="chk"><input type="checkbox"> Proof fits the org type (LGU, NGO, Barangay or Company)</label></div>
-      <div class="card"><div class="eyebrow">Decision</div>
+      <div class="card" id="rv-decision"><div class="eyebrow">Decision</div>
         <label for="r-r">Reason (required when rejecting)</label>
         <textarea id="r-r" rows="3" placeholder="Tell the organization what to fix, e.g. blurry photo or name does not match."></textarea>
-        <div class="g2 mt"><button class="btn solid">Approve</button><button class="btn">Reject</button></div>
+        <p class="err" id="rv-err" hidden></p>
+        <div class="g2 mt"><button class="btn solid" type="button" id="rv-approve">Approve</button><button class="btn" type="button" id="rv-reject">Reject</button></div>
         <p class="mute mt">Approving unlocks posting requests for the organization. Rejecting shows your reason on the organization's page.</p></div>
+      <div class="card" id="rv-done" hidden><div class="eyebrow">Decision</div><p id="rv-done-text"></p></div>
     </div>
   </div>
 </section>
 
-<section class="view" data-v="admin-accounts" data-role="admin" data-nav="admin-home">
+<section class="view" data-v="admin-accounts" data-role="admin">
   <h1>Accounts</h1><p class="sub">Find any organization or donor and manage access.</p>
-  <div class="pills mt"><button class="pill on" type="button">All</button><button class="pill" type="button">Organizations</button><button class="pill" type="button">Donors</button><button class="pill" type="button">Suspended</button></div>
-  <label for="s-q">Search</label><input id="s-q" placeholder="Search by name or email">
+  <div class="toolbar"><div class="pills"><button class="pill on" type="button" data-f="all">All</button><button class="pill" type="button" data-f="org">Organizations</button><button class="pill" type="button" data-f="donor">Donors</button><button class="pill" type="button" data-f="suspended">Suspended</button></div>
+  <input id="s-q" class="search" placeholder="Search by name or email" aria-label="Search by name or email"></div>
   <div class="card mt" style="overflow-x:auto"><table class="tbl">
     <thead><tr><th>Name</th><th>Type</th><th>Email</th><th>Date Joined</th><th>Status</th><th>Action</th></tr></thead>
-    <tbody>
-      <tr><td>Barangay San Roque</td><td>Organization</td><td>sanroque@email.com</td><td>Nov 12</td><td>Active</td><td><a href="#">View</a> <button class="btn">Suspend</button></td></tr>
-      <tr><td>Juan Dela Cruz</td><td>Donor</td><td>juan@email.com</td><td>Nov 10</td><td>Suspended</td><td><a href="#">View</a> <button class="btn">Suspend</button></td></tr>
-    </tbody></table></div>
+    <tbody id="ac-body"></tbody></table></div>
 </section>
 
 </main>

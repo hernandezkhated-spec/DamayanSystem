@@ -1,2 +1,5 @@
 ADMIN|26a05f24|Damayan Admin|admin@damayan.local|a6bd781ed355ef997b5fc941fb3660c337fef334ca4669139772564c48b77b16|false|
-DONOR|0db2c479|Khate|khate143@gmail.com|e91e511171b8962230077fe7f4cf57d980fa0cdcc40595967583f17932d28feb|false|Individual
+DONOR|0db2c479|Khate|khate143@gmail.com|e91e511171b8962230077fe7f4cf57d980fa0cdcc40595967583f17932d28feb|true|Individual
+DONOR|4963d597|khate|khate@test.com|e17e3977b9c5f4d9e2520333802d8e36ae1a1d50401fd5c0aff676110f78d5cd|true|Individual
+DONOR|eb4b6a23|Khate Henrnadez|kayxie92@gmail.com|f283b49daccfdefb40de3a4b8364f2b0cd49df1bab3dc4d0b5286ef0ac22983a|false|Individual
+ORGANIZATION|ac6afb2a|Barangay San Roque|sanroque@test.com|24e0b9c393a397d12ef59a4f4df412ada1453852693e57e0c6b148caf5ff087a|false|Barangay|BRGY-2026-001|____.jpg|VERIFIED|
