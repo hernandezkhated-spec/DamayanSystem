@@ -1,5 +1,4 @@
 ADMIN|26a05f24|Damayan Admin|admin@damayan.local|a6bd781ed355ef997b5fc941fb3660c337fef334ca4669139772564c48b77b16|false|
-DONOR|0db2c479|Khate|khate143@gmail.com|e91e511171b8962230077fe7f4cf57d980fa0cdcc40595967583f17932d28feb|true|Individual
-DONOR|4963d597|khate|khate@test.com|e17e3977b9c5f4d9e2520333802d8e36ae1a1d50401fd5c0aff676110f78d5cd|true|Individual
-DONOR|eb4b6a23|Khate Henrnadez|kayxie92@gmail.com|f283b49daccfdefb40de3a4b8364f2b0cd49df1bab3dc4d0b5286ef0ac22983a|false|Individual
-ORGANIZATION|ac6afb2a|Barangay San Roque|sanroque@test.com|24e0b9c393a397d12ef59a4f4df412ada1453852693e57e0c6b148caf5ff087a|false|Barangay|BRGY-2026-001|____.jpg|VERIFIED|
+DONOR|0db2c479|Khate|khate143@gmail.com|e91e511171b8962230077fe7f4cf57d980fa0cdcc40595967583f17932d28feb|false|Individual
+DONOR|a1b2c3d4|Test Donor|donor@test.com|246a7c84daee9d6615d6ea29124fe9adcc12ec4768f88563b5174cb141f0a408|false|Individual
+ORGANIZATION|e5f6a7b8|Test Barangay|org@test.com|cccb7b98c694a48d65c531670d198c161748007df271b3b80c0fd11fa81772ce|false|Barangay|TEST-001|proof.pdf|VERIFIED|
